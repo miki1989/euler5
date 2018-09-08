@@ -2,32 +2,28 @@ package com.example.demo;
 
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class Euler2Test {
+    private Euler2 euler2;
 
+    @Before
+    public void init(){
+        euler2 = new Euler2();
+    }
     @Test
-    public void shouldReturnTruefor3(){
+    public void shouldReturn2520for10(){
 
         //given
-        int check = 9699690;
+        int check = 10;
         //when
-        boolean flag = check % 3 == 0;
+        int result = euler2.check(10);
         //then
-        Assert.assertThat(check % 3 == 0, CoreMatchers.is(true));
+        Assert.assertThat(result, CoreMatchers.is(2520));
 
     }
 
-    @Test
-    public void shouldReturnTrueForAll(){
-
-        //given
-        int check = 9699690;
-        //when
-        boolean flag = check % 3 == 0;
-        //then
-        Assert.assertThat(check % 3 == 0 && check % 5 ==0 && check % 2 ==0 && check % 7 ==0 && check % 11 ==0 && check % 13 == 0 && check % 17 ==0 && check % 19 ==0, CoreMatchers.is(true));
-
-    }
+    
 
 }

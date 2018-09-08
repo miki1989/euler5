@@ -2,16 +2,27 @@ package com.example.demo;
 
 import org.springframework.stereotype.Component;
 
+import java.math.BigInteger;
+
 @Component
 public class Euler2 {
 
-    public static void main(String[] args) {
-        for (int i = 0; i < 50000000; i++) {
-            if (i % 2 == 0 && i % 3 == 0 && i % 5 == 0 && i % 7 == 0 && i % 11 == 0 && i % 13 == 0 && i % 17 == 0 && i % 19 == 0){
-                System.out.println(i);
-            }
+    public int check(int limit){
 
+        while (!checkNumber(limit)){
+            limit++;
         }
+        return limit;
     }
+
+    public static boolean checkNumber(int n){
+        for (int i = 1; i < 20; i++) {
+            if(n % i !=0){
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
 
